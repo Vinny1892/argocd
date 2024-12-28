@@ -1,0 +1,22 @@
+apiVersion: argproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik-ingressroute-argocd
+  namespace: default
+project: default
+source:
+  repoURL: https://github.com/Vinny1892/argocd
+  path: traefik_ingressroute
+  targetRevision: HEAD
+destination:
+  server: https://kubernetes.default.svc
+  namespace: default
+syncPolicy:
+  automated:
+    prune: true
+  retry:
+    limit: 1
+    backoff:
+      duration: 5s
+      factor: 2
+      maxDuration: 3m0s

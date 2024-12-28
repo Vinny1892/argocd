@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metallb
+  namespace: default
+spec:
+  project: default
+  source:
+    repoURL: https://traefik.github.io/charts
+    targetRevision: "33.2.1"
+    chart: traefik
+    helm:
+      values: |
+        ingressRoute:
+          dashboard:
+              enabled: true
+              entrypoints:
+                - websecure
+              matchRule: Host(`traefik.k3s.home.vinny.dev.br`)
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: traefik
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      allowEmpty: true
+      selfHeal: true
