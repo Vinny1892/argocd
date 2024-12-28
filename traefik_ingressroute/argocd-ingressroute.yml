@@ -1,0 +1,15 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-ingressroute
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`argocd.k3s.home.vinny.dev.br`)
+    kind: Rule
+    services:
+    - name: argocd-server
+      port: 80
+  tls:
+    secretName: argocd-ingressroute-certificate
