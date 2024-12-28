@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Vinny1892/cert-management
+    repoURL: https://github.com/Vinny1892/argocd.git
     targetRevision: HEAD
-    path: argo-apps/root
+    path: argo-apps/
   destination:
     server: https://kubernetes.default.svc
     namespace: default
