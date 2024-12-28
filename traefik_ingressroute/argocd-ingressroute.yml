@@ -12,7 +12,7 @@ spec:
     services:
     - kind: Service
       name: argocd-server
-      port: http
+      port: https
   - match: >-
       Host(`argocd.k3s.home.vinny.dev.br`) &&
       Headers(`Content-Type`, `application/grpc`)
