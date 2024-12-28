@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Vinny1892/argocd
-    path: configure-app/traefik
+    path: configure-app/traefik_ingressroute
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
