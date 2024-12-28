@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Vinny1892/argocd
-    path: ../apps/metallb
+    path: argocd/argo-apps/apps/metallb
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
