@@ -12,4 +12,4 @@ global:
 fullnameOverride: argocd
 configs:
   params:
-    server.insecure: true # if using traefik v3 this value should be true
+    server.insecure: false # if using traefik v3 this value should be true

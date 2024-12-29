@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: traefik-dashboard-ingressroute-certificate
+  namespace: traefik
+spec:
+  secretName: traefik-dashboard-certificate-secret
+  issuerRef:
+    name: cloudflare-clusterissuer # Change if necessary
+    kind: ClusterIssuer # Change if necessary
+  dnsNames:
+    - traefik.k3s.home.vinny.dev.br
