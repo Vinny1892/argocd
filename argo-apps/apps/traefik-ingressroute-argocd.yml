@@ -4,7 +4,7 @@ metadata:
   name: traefik-ingressroute-argocd
   namespace: default
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/depends-on: "traefik"
 spec:
   project: default

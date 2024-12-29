@@ -1,1 +1,2 @@
-kubectl create secret generic -n cert-manager cloudflare-api-token --from-file=api-token=cloudflare_token.txt
+kubectl create ns cert-manager
+kubectl apply -f cloudflare_token_secret.yml
