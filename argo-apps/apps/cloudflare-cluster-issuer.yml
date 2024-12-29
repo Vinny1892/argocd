@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik-ingressroute-argocd
+  name: cloudflare-cluster-issuer
   namespace: default
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-    argocd.argoproj.io/depends-on: "traefik"
+    argocd.argoproj.io/depends-on: "cert-manager"
 spec:
   project: default
   source:
     repoURL: https://github.com/Vinny1892/argocd
-    path: configure-app/traefik_ingressroute/argocd
+    path: configure-app/cloudflare_cluster_issuer
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
