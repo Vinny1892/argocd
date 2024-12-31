@@ -18,8 +18,8 @@ spec:
             [OUTPUT]
                 Name loki
                 Match *
-                Host loki.monitoring:3100
-                port 80
+                Host loki.monitoring
+                port 3100
                 labels job=fluent-bita
                 auto_kubernetes_labels on
   destination:
