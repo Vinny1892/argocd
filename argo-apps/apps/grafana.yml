@@ -17,7 +17,7 @@ spec:
               datasources:
                 - name: Loki
                   type: Loki
-                  url: http://monitoring.loki
+                  url: http://loki.monitoring
                   isDefault: false
          ingress:
             enabled: true
