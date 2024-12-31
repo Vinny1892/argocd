@@ -17,8 +17,6 @@ spec:
               entrypoints:
                 - websecure
               matchRule: Host(`traefik.k3s.home.vinny.dev.br`)
-              tls:
-                secretName: traefik-dashboard-certificate-secret
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik
