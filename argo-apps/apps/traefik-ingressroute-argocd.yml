@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: traefik-ingressroute-argocd
-  namespace: default
+  namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/depends-on: "traefik"
@@ -14,7 +14,7 @@ spec:
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
