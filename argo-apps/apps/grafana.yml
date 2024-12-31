@@ -22,9 +22,6 @@ spec:
          ingress:
             enabled: true
             tls: []
-            #  - secretName: chart-example-tls
-            #    hosts:
-            #      - chart-example.local
             ingressClassName: traefik
             hosts:
               - "grafana.k3s.home.vinny.dev.br"
@@ -33,7 +30,7 @@ spec:
               domain: grafana.k3s.home.vinny.dev.br
   destination:
     server: https://kubernetes.default.svc
-    namespace: traefik
+    namespace: monitoring
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
