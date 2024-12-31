@@ -18,9 +18,9 @@ spec:
             [OUTPUT]
               Name loki
               Match *
-              Host loki-gateway.loki
+              Host loki.monitoring:3100
               port 80
-              labels job=fluent-bit
+              labels job=fluent-bita
               auto_kubernetes_labels on
           EOT
   destination:
