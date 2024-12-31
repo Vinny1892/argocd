@@ -14,7 +14,7 @@ spec:
         serviceMonitor:
           enabled: true
         config:
-          outputs: <<EOT
+          outputs:
             [OUTPUT]
               Name loki
               Match *
@@ -22,7 +22,6 @@ spec:
               port 80
               labels job=fluent-bita
               auto_kubernetes_labels on
-          EOT
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
