@@ -46,44 +46,46 @@ spec:
 
 ---
 
-#   apiVersion: networking.k8s.io/v1
-#   kind: Ingress
-#   metadata:
-#     name: nginx
-#   spec:
-#     ingressClassName: nginx
-#     tls:
-#       - hosts:
-#           - nginx.k3s.home.vinny.dev.br
-#         secretName: nginx-ingressroute-certificate
-#     rules:
-#       - host: nginx.k3s.home.vinny.dev.br
-#         http:
-#           paths:
-#             - pathType: Prefix
-#               path: /
-#               backend:
-#                 service:
-#                   name: nginx-service
-#                   port:
-#                     number: 80
-
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: nginx-ingressroute
-  namespace: demo-nginx
+  name: nginx
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: nginx.k3s.home.vinny.dev.br
 spec:
-  entryPoints:
-    - websecure
-  routes:
-  - match: Host(`nginx.k3s.home.vinny.dev.br`)
-    kind: Rule
-    services:
-    - name: nginx-service
-      port: 80
-  tls:
-    secretName: nginx-certificate-secret
+ ingressClassName: nginx
+ tls:
+   - hosts:
+       - nginx.k3s.home.vinny.dev.br
+     secretName: nginx-certificate-secret
+ rules:
+   - host: nginx.k3s.home.vinny.dev.br
+     http:
+       paths:
+         - pathType: Prefix
+           path: /
+           backend:
+             service:
+               name: nginx-service
+               port:
+                 number: 80
+
+#apiVersion: traefik.io/v1alpha1
+#kind: IngressRoute
+#metadata:
+#  name: nginx-ingressroute
+#  namespace: demo-nginx
+#spec:
+#  entryPoints:
+#    - websecure
+#  routes:
+#  - match: Host(`nginx.k3s.home.vinny.dev.br`)
+#    kind: Rule
+#    services:
+#    - name: nginx-service
+#      port: 80
+#  tls:
+#    secretName: nginx-certificate-secret
 ---
 
 apiVersion: cert-manager.io/v1

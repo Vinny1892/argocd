@@ -11,18 +11,17 @@ spec:
     chart: grafana
     helm:
       values: |
-          ingress:
-            enabled: true
-            tls:
-              - secretName: grafana-server-tls
-                hosts:
-                  - grafana.k3s.home.vinny.dev.br
-            ingressClassName: traefik
-            hosts:
-              - "grafana.k3s.home.vinny.dev.br"
+          provider: 
+            name: cloudflare
+          env:
+            - name: CF_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: cloudflare-api-token
+                  key: apiToken
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring
+    namespace: cert-manager
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
