@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik-ingressroute-argocd
+  name: ssl-certificates
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "2"
@@ -10,11 +10,10 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Vinny1892/argocd
-    path: configure-app/traefik_ingressroute/argocd
+    path: configure-app/ssl-certificates
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
   syncPolicy:
     automated:
       prune: true
