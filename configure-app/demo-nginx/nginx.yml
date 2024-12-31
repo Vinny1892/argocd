@@ -53,7 +53,7 @@ metadata:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: nginx.k3s.home.vinny.dev.br
 spec:
- ingressClassName: nginx
+ ingressClassName: traefik
  tls:
    - hosts:
        - nginx.k3s.home.vinny.dev.br
