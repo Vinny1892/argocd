@@ -11,12 +11,12 @@ spec:
     chart: grafana
     helm:
       values: |
-         ingress:
+          ingress:
             enabled: true
             tls:
               - secretName: grafana-server-tls
-              hosts:
-                - grafana.k3s.home.vinny.dev.br
+                hosts:
+                  - grafana.k3s.home.vinny.dev.br
             ingressClassName: traefik
             hosts:
               - "grafana.k3s.home.vinny.dev.br"
@@ -29,4 +29,10 @@ spec:
     automated:
       prune: true
       allowEmpty: true
-      selfHeal: true
+      selfHeal:
+
+
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
