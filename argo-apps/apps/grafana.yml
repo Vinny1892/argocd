@@ -21,10 +21,10 @@ spec:
                   isDefault: false
          ingress:
             enabled: true
-              tls: []
-              #  - secretName: chart-example-tls
-              #    hosts:
-              #      - chart-example.local
+            tls: []
+            #  - secretName: chart-example-tls
+            #    hosts:
+            #      - chart-example.local
             ingressClassName: traefik
             hosts:
               - "grafana.k3s.home.vinny.dev.br"
