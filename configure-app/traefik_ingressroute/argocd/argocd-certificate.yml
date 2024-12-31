@@ -10,3 +10,4 @@ spec:
     kind: ClusterIssuer # Change if necessary
   dnsNames:
     - argocd.k3s.home.vinny.dev.br
+    - tmp.k3s.home.vinny.dev.br
