@@ -13,7 +13,10 @@ spec:
       values: |
          ingress:
             enabled: true
-            tls: []
+            tls:
+              - secretName: grafana-server-tls
+              hosts:
+                - grafana.k3s.home.vinny.dev.br
             ingressClassName: traefik
             hosts:
               - "grafana.k3s.home.vinny.dev.br"
