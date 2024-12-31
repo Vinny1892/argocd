@@ -11,14 +11,6 @@ spec:
     chart: grafana
     helm:
       values: |
-         datasources:
-            datasources.yaml:
-              apiVersion: 1
-              datasources:
-                - name: Loki
-                  type: Loki
-                  url: http://loki.monitoring
-                  isDefault: false
          ingress:
             enabled: true
             tls: []
