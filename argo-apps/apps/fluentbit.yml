@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fluentbit
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://fluent.github.io/helm-charts
+    targetRevision: "0.1.28"
+    chart: fluent-bit
+    helm:
+      values: |
+        serviceMonitor:
+          enabled: true
+        config:
+          outputs: <<EOT
+            [OUTPUT]
+              Name loki
+              Match *
+              Host loki-gateway.loki
+              port 80
+              labels job=fluent-bit
+              auto_kubernetes_labels on
+          EOT
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      allowEmpty: true
+      selfHeal: true
