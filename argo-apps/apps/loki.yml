@@ -7,10 +7,13 @@ spec:
   project: default
   source:
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: "2.9.3"
+    targetRevision: "2.10.2"
     chart: loki-stack
     helm:
       values: |
+        loki:
+          image:
+            tag: '2.9.3'
         promtail:
           enabled: false
         grafana:
