@@ -25,9 +25,6 @@ spec:
             ingressClassName: traefik
             hosts:
               - "grafana.k3s.home.vinny.dev.br"
-          grafana.ini:
-            server:
-              domain: grafana.k3s.home.vinny.dev.br
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
