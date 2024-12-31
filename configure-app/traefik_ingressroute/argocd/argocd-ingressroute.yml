@@ -25,27 +25,3 @@
 #      scheme: h2c
 #  tls:
 #    secretName: argocd-server-tls
-
----
-
- apiVersion: networking.k8s.io/v1
- kind: Ingress
- metadata:
-   name: nginx
- spec:
-   ingressClassName: nginx
-   tls:
-     - hosts:
-         - argocd.k3s.home.vinny.dev.br
-       secretName: argocd-server-tls
-   rules:
-     - host: argocd.k3s.home.vinny.dev.br
-       http:
-         paths:
-           - pathType: Prefix
-             path: /
-             backend:
-               service:
-                 name: nginx-service
-                 port:
-                   number: 80

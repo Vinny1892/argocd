@@ -18,3 +18,4 @@ server:
   ingress:
     enabled: true
     tls: true
+    ingressClassName: "traefik"
