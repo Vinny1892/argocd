@@ -16,12 +16,12 @@ spec:
         config:
           outputs: |
             [OUTPUT]
-              Name loki
-              Match *
-              Host loki.monitoring:3100
-              port 80
-              labels job=fluent-bita
-              auto_kubernetes_labels on
+                Name loki
+                Match *
+                Host loki.monitoring:3100
+                port 80
+                labels job=fluent-bita
+                auto_kubernetes_labels on
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
