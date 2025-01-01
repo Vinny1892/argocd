@@ -18,7 +18,7 @@ spec:
                 external-dns.alpha.kubernetes.io/target: batatinha.k3s.home.vinny.dev.br
                 kubernetes.io/ingress.class: traefik
               entryPoints: ["websecure"]
-              matchRule: Host(`dashboard.k3s.home.vinny.dev.br`)
+              matchRule: Host(`batatinha.k3s.home.vinny.dev.br`)
               tls:
                 secretName: traefik-dashboard-certificate-secret
   destination:
