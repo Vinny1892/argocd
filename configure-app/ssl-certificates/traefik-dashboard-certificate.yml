@@ -9,4 +9,4 @@ spec:
     name: cloudflare-clusterissuer # Change if necessary
     kind: ClusterIssuer # Change if necessary
   dnsNames:
-    - traefik.k3s.home.vinny.dev.br
+    - dashboard.k3s.home.vinny.dev.br

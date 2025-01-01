@@ -15,10 +15,10 @@ spec:
           dashboard:
               enabled: true
               annotations: 
-                external-dns.alpha.kubernetes.io/target: traefik.k3s.home.vinny.dev.br
+                external-dns.alpha.kubernetes.io/target: dashboard.k3s.home.vinny.dev.br
                 kubernetes.io/ingress.class: traefik
               entryPoints: ["websecure"]
-              matchRule: Host(`traefik.k3s.home.vinny.dev.br`)
+              matchRule: Host(`dashboard.k3s.home.vinny.dev.br`)
               tls:
                 secretName: traefik-dashboard-certificate-secret
   destination:
