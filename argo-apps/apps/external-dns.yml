@@ -12,7 +12,7 @@ spec:
     helm:
       values: |
           extraArgs:
-            - --traefik-disable-legacy
+            - --traefik-disable-new
           sources:
             - service
             - ingress
