@@ -16,6 +16,7 @@ spec:
               enabled: true
               entrypoints:
                 - websecure
+                - traefik
               matchRule: Host(`traefik.k3s.home.vinny.dev.br`)
           healthCheck:
               enabled: true
