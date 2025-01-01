@@ -16,11 +16,7 @@ spec:
               enabled: true
               entrypoints:
                 - websecure
-                - web
-                - traefik
               matchRule: Host(`traefik.k3s.home.vinny.dev.br`)
-          healthCheck:
-              enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik
