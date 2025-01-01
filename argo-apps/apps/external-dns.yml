@@ -11,7 +11,7 @@ spec:
     chart: external-dns
     helm:
       values: |
-          source:
+          sources:
             - service
             - ingress
             - traefik-proxy
