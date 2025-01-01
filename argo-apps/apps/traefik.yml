@@ -15,7 +15,7 @@ spec:
           dashboard:
               enabled: true
               annotations: 
-                external-dns.alpha.kubernetes.io/hostname: batatinha.k3s.home.vinny.dev.br
+                external-dns.alpha.kubernetes.io/target: 192.168.100.220
                 kubernetes.io/ingress.class: traefik
               entryPoints: ["websecure"]
               matchRule: Host(`batatinha.k3s.home.vinny.dev.br`)
