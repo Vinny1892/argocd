@@ -11,6 +11,10 @@ spec:
     chart: external-dns
     helm:
       values: |
+          source:
+            - service
+            - ingress
+            - traefik-proxy
           provider: 
             name: cloudflare
           env:
