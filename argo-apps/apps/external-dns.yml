@@ -11,7 +11,8 @@ spec:
     chart: external-dns
     helm:
       values: |
-
+          extraArgs:
+            - --traefik-disable-legacy
           sources:
             - service
             - ingress
@@ -34,7 +35,3 @@ spec:
       prune: true
       allowEmpty: true
       selfHeal:
-
-
-#          extraArgs:
-#            - --traefik-disable-new
