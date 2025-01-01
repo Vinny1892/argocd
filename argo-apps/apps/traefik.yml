@@ -15,6 +15,7 @@ spec:
           dashboard:
               enabled: true
               annotations: 
+                external-dns.alpha.kubernetes.io/hostname: dashboard.k3s.home.vinny.dev.br
                 external-dns.alpha.kubernetes.io/target: dashboard.k3s.home.vinny.dev.br
                 kubernetes.io/ingress.class: traefik
               entryPoints: ["websecure"]
