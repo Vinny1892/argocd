@@ -14,6 +14,8 @@ spec:
         ingressRoute:
           dashboard:
               enabled: true
+              annotations: 
+                external-dns.alpha.kubernetes.io/hostname: traefik.k3s.home.vinny.dev.br
               entryPoints: ["websecure"]
               matchRule: Host(`traefik.k3s.home.vinny.dev.br`)
               tls:
