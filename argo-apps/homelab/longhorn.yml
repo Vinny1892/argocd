@@ -22,7 +22,7 @@ spec:
             enabled: true
             ingressClassName: traefik
             tls: true
-            tlsSecret: longhorn.local-tls
+            tlsSecret: longhorn-server-tls
             pathType: Prefix
             host: longhorn.k3s.home.vinny.dev.br
   destination:
