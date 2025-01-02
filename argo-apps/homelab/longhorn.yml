@@ -7,11 +7,24 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+    automated:
+      prune: true
+      allowEmpty: true
+      selfHeal: true
   project: default
   sources:
     - chart: longhorn
       repoURL: https://charts.longhorn.io/
       targetRevision: v1.7.2
+      helm:
+        values: |
+          ingress:
+            enabled: true
+            ingressClassName: traefik
+            tls: true
+            tlsSecret: longhorn.local-tls
+            pathType: Prefix
+            host: longhorn.k3s.home.vinny.dev.br
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
