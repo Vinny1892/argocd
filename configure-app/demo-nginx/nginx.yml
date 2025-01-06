@@ -59,10 +59,10 @@ spec:
  ingressClassName: traefik
  tls:
    - hosts:
-       - nginx.k3s.home.vinny.dev.br
+       - nginx.vinny.dev.br
      secretName: nginx-certificate-secret
  rules:
-   - host: nginx.k3s.home.vinny.dev.br
+   - host: nginx.vinny.dev.br
      http:
        paths:
          - pathType: Prefix
