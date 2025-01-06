@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudflared
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://cloudflare.github.io/helm-charts
+    targetRevision: "0.3.2"
+    chart: cloudflare
+    helm:
+      values: |
+        cloudflare:
+          tunnelName: k3s-home-lab
+          tunnelId: "e30e16e1-9e76-41f4-b97f-a26f0ecb523d"
+          secretName: tunnel-credentials
+          ingress:
+            hostname: "*.k3s.home.vinny.dev.br"
+            service: "https://traefik.traefik.svc.cluster.local:443"
+            originRequest:
+                noTLSVerify: true
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cloudflared
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      allowEmpty: true
+      selfHeal: true
