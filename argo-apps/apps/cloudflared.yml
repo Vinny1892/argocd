@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://cloudflare.github.io/helm-charts
     targetRevision: "0.3.2"
-    chart: cloudflare
+    chart: cloudflare-tunnel
     helm:
       values: |
         cloudflare:
