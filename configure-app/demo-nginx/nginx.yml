@@ -52,7 +52,7 @@ metadata:
   name: nginx
   annotations:
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-    external-dns.alpha.kubernetes.io/hostname: onginx.k3s.home.vinny.dev.br
+    external-dns.alpha.kubernetes.io/hostname: nginx.vinny.dev.br
     external-dns.alpha.kubernetes.io/target: e30e16e1-9e76-41f4-b97f-a26f0ecb523d.cfargotunnel.com
 
 spec:
@@ -102,4 +102,4 @@ spec:
     name: cloudflare-clusterissuer
     kind: ClusterIssuer
   dnsNames:
-    - nginx.k3s.home.vinny.dev.br
+    - nginx.vinny.dev.br
