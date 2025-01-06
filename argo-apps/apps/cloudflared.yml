@@ -16,7 +16,7 @@ spec:
           tunnelId: "e30e16e1-9e76-41f4-b97f-a26f0ecb523d"
           secretName: tunnel-credentials
           ingress:
-            - hostname: "*.k3s.home.vinny.dev.br"
+            - hostname: "*.vinny.dev.br"
               service: "https://traefik.traefik.svc.cluster.local:443"
               originRequest:
                 noTLSVerify: true
